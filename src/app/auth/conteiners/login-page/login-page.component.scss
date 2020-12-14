@@ -1,0 +1,211 @@
+@import "../../../../styles/mixin.scss";
+
+$color-blue: #282778;
+$color-blue-dark: #05042c;
+
+*,
+html {
+    @include segoe-semi;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    @include wrapper;
+
+    @include r(480) {
+        max-width: 470px;
+        padding: 0 10px;
+    }
+}
+
+.header {
+    display: flex;
+
+    &__logo {
+        @include background-center;
+        display: block;
+        background-image: url(../../../../assets/images/logo-khn.png);
+        background-size: cover;
+        width: 200px;
+        height: 156px;
+
+        @include r(480) {
+            margin: 0 auto;
+        }
+    }
+}
+
+.authorization {
+    &__inner {
+        @include flex-center;
+        flex-direction: column;
+        position: relative;
+        margin-top: 100px;
+        text-align: center;
+    }
+
+    &__title {
+        @include segoe-bold;
+        max-width: 350px;
+        font-size: 30px;
+        color: $color-blue;
+        letter-spacing: 2px;
+
+        &::after {
+            display: block;
+            margin: 20px auto 30px;
+            content: "";
+            background-color: $color-blue;
+            height: 2px;
+            width: 175px;
+
+            @include r(480) {
+                width: 125px;
+            }
+        }
+
+        @include r(480) {
+            font-size: 25px;
+        }
+    }
+
+    &__form {
+        padding: 100px 55px;
+        max-width: 410px;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 5px 5px 8px #787878;
+        border-radius: 2%;
+
+        @include r(480) {
+            padding: 50px 25px;
+            box-shadow: 0 0 8px #787878;
+        }
+    }
+
+    &__background-image {
+        @include background-center;
+        background-image: url(../../../../assets/images/lines.png);
+        background-size: contain;
+        height: 100%;
+        position: absolute;
+        top: 80px;
+        left: 60px;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+
+        @include r(990) {
+            display: none;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__input-content {
+        position: relative;
+        max-width: 300px;
+        width: 100%;
+
+        & + & {
+            margin-top: 50px;
+        }
+    }
+
+    &__input {
+        padding: 7px 30px 7px 45px;
+        width: 100%;
+        outline: none;
+        border: transparent !important;
+        border-radius: 0;
+        border-bottom: 2px solid $color-blue !important;
+        transition-property: border-color, color, box-shadow;
+        transition-duration: 0.5s;
+        color: $color-blue;
+
+        &::placeholder {
+            @include segoe-semi;
+            color: $color-blue;
+        }
+
+        &:hover,
+        &:focus {
+            border-color: $color-blue !important;
+        }
+    }
+
+    &__input-image {
+        @include background-center;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        cursor: pointer;
+    }
+
+    &__input-image--login {
+        background-image: url(../../../../assets/images/login.png);
+    }
+
+    &__input-image--password {
+        background-image: url(../../../../assets/images/password.png);
+    }
+
+    &__form-check {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+        padding: 0 5px;
+        width: 100%;
+
+        @include r(480) {
+            justify-content: center;
+        }
+    }
+
+    &__check {
+        cursor: pointer;
+    }
+
+    &__check-label {
+        padding-left: 5px;
+        line-height: 14px;
+        color: $color-blue;
+        cursor: pointer;
+    }
+
+    &__btn {
+        display: block;
+        margin-top: 40px;
+        padding: 15px 0;
+        max-width: 150px;
+        width: 100%;
+        background-color: $color-blue;
+        box-shadow: 1px 2px 5px #000;
+        border: none;
+        border-radius: 3%;
+        color: #fff;
+        outline: transparent;
+        cursor: pointer;
+        transition-property: background-color;
+        transition-duration: 0.5s;
+
+        &:hover {
+            background-color: $color-blue-dark;
+        }
+    }
+
+    &__btn-title {
+        text-transform: uppercase;
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+}

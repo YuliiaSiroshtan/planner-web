@@ -1,0 +1,47 @@
+@import '../../../../styles/mixin.scss';
+
+$blue-background: #141880;
+
+*,
+html {
+  @include segoe-semi;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  @include flex-center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 0;
+  background-color: $blue-background;
+
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  &__item {
+    list-style-type: none;
+    padding: 0 5px 5px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    transition-property: border-color;
+    transition-duration: .3s;
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 1);
+    }
+  }
+
+  &__link {
+    @include segoe-semi;
+    font-size: 20px;
+    color: #fff;
+  }
+}
+
+

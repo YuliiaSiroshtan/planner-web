@@ -1,0 +1,133 @@
+@import "../../../../styles/mixin.scss";
+
+$blue-background: #141880;
+
+*,
+html {
+    @include segoe-semi;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    @include wrapper;
+}
+
+.footer {
+    background-color: $blue-background;
+    width: 100%;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        padding: 50px 0 5px;
+    }
+
+    &__socials {
+        @include flex-center;
+    }
+
+    &__title {
+        display: block;
+        font-size: 25px;
+        line-height: 20px;
+        color: #fff;
+        margin-right: 20px;
+    }
+
+    &__socials-list {
+        display: flex;
+    }
+
+    &__item {
+        list-style-type: none;
+
+        & + & {
+            margin-left: 5px;
+        }
+    }
+
+    &__container {
+        display: flex;
+        margin-top: 20px;
+        padding: 15px 0;
+        border: 1px solid gray;
+        border-left: none;
+        border-right: none;
+        color: #fff;
+    }
+
+    &__menu {
+        margin-right: 150px;
+    }
+
+    &__menu-item {
+        list-style-type: none;
+
+        & + & {
+            margin-top: 15px;
+        }
+    }
+
+    &__menu-link {
+        font-size: 20px;
+        color: #fff;
+        transition-property: color;
+        transition-duration: 0.3s;
+
+        &:hover {
+            color: #7f7f7f;
+        }
+    }
+
+    &__data {
+        font-style: normal;
+        margin-right: 150px;
+    }
+
+    &__data-list {
+        max-width: 292px;
+    }
+
+    &__data-item {
+        list-style-type: none;
+        font-size: 20px;
+
+        & + & {
+            margin-top: 15px;
+            font-size: 15px;
+        }
+    }
+
+    &__data-link {
+        display: block;
+        color: #fff;
+        transition-property: color;
+        transition-duration: 0.3s;
+
+        &:hover {
+            color: #7f7f7f;
+        }
+    }
+
+    &__logo {
+        display: block;
+        margin: 4% 0;
+    }
+
+    &__copyright {
+        display: flex;
+        align-items: flex-end;
+        padding: 10px 20px;
+        color: #fff;
+    }
+
+    &__copyright-logo {
+        margin-right: 25px;
+    }
+
+    &__copyright-data {
+        line-height: 20px;
+    }
+}
