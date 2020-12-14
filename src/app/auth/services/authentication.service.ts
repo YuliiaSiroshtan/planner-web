@@ -18,13 +18,8 @@ export class AuthenticationService {
     return this._http.post(`${environment.apiPythonBaseUrl}login`, login)
     .pipe(map(result => {
       this.tokenResult = result;
-      if(this.tokenResult.accessToken){
-        localStorage.setItem('tokenInfo', this.tokenResult.accessToken);
-      }
-      if (this.tokenResult && this.tokenResult.jwtToken && this.tokenResult.jwtToken.token) {
-        console.log(result);
-        localStorage.setItem('tokenInfo', this.tokenResult.jwtToken.token);
-        // localStorage.setItem('role', this.tokenResult.jwtToken.role);
+      if(this.tokenResult.access_token){
+        localStorage.setItem('tokenInfo', this.tokenResult.access_token);
       }
       return this.tokenResult;
     }));
