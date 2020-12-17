@@ -1,8 +1,11 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { map } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { environment } from "src/environments/environment";
 import { LoginModel } from '../models/auth.models';
+import { TypeNotify } from 'src/app/shared/constants/constants';
+import { NotifierService } from 'angular-notifier';
+import { of } from 'rxjs';
 
 @Injectable()
 export class AuthenticationService {
@@ -12,10 +15,12 @@ export class AuthenticationService {
     return !!this.getToken();
   }
   
-  constructor(private _http: HttpClient) { }
+  constructor(
+    private _http: HttpClient,  
+    private _notifierService: NotifierService) { }
 
-  isAuthenticated(login: LoginModel) {
-    return this._http.post(`${environment.apiPythonBaseUrl}login`, login)
+  login(loginModel: LoginModel) {
+    return this._http.post(`${environment.apiPythonBaseUrl}login`, loginModel)
     .pipe(map(result => {
       this.tokenResult = result;
       if(this.tokenResult.access_token){

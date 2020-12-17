@@ -59,3 +59,8 @@ export class ApplicationConstants {
 
 }
 
+export class TypeNotify{
+    public static readonly ERROR = 'error';
+    public static readonly SUCCESS = 'success';
+}
+

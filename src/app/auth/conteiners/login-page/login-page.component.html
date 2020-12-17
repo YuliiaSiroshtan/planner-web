@@ -1,5 +1,3 @@
-<!-- <p-toast key="error" position="top-center"></p-toast> -->
-
 <header class="header">
   <div class="wrapper">
     <a class="header__logo" href="http://www.hneu.edu.ua/"
@@ -19,24 +17,34 @@
         <div class="authorization__container">
           <div class="authorization__input-content">
             <label class="authorization__input-image authorization__input-image--login" for="auto-login"></label>
-            <input class="authorization__input" type="email" pInputText placeholder="ЛОГІН" formControlName="email"
-              id="auto-login" required>
+            <input class="authorization__input" 
+              type="email" placeholder="ЛОГІН" 
+              formControlName="email"
+              id="auto-login">
+              <span *ngIf="user.email.invalid && user.email.errors.required && (user.email.dirty || user.email.touched)">
+                This field is required!
+              </span>
+              <span *ngIf="user.email.invalid && user.email.errors.email && (user.email.dirty || user.email.touched)">
+                Email is invalid!
+              </span>
           </div>
-          <!-- <p-message severity="error" [text]="getErrorMessage('email')"
-                     *ngIf="!this.userform.controls['email'].valid && this.userform.controls['email'].dirty"></p-message> -->
 
           <div class="authorization__input-content">
             <label class="authorization__input-image authorization__input-image--password" for="auto-pass"></label>
-            <input class="authorization__input" type="password" pInputText placeholder="ПАРОЛЬ"
-              formControlName="password" id="auto-pass" required>
+            <input class="authorization__input" 
+              type="password" 
+              placeholder="ПАРОЛЬ"
+              formControlName="password" 
+              id="auto-pass">
+              <span *ngIf="user.password.invalid && user.password.errors.required && (user.password.dirty || user.password.touched)">
+                This field is required!
+              </span>
           </div>
-          <!-- <p-message severity="error" [text]="getErrorMessage('password')"
-                     *ngIf="!this.userform.controls['password'].valid && this.userform.controls['password'].dirty"></p-message> -->
-
-          <div class="authorization__form-check">
+      
+          <!-- <div class="authorization__form-check">
             <input class="authorization__check" type="checkbox" id="auto-check" requiredx>
             <label class="authorization__check-label" for="auto-check">Запам'ятати мене</label>
-          </div>
+          </div> -->
           <button class="authorization__btn" type="submit">
             <span class="authorization__btn-title">Вхід</span>
           </button>
