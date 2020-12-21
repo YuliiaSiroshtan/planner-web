@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -58,6 +58,7 @@ import { EntryLoadService } from '../core/services/entry-load.service';
 import { DesciplineService } from '../core/services/descipline.service';
 import { AccountService } from '../core/services/account.service';
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 /**
  * Custom angular notifier options
@@ -119,6 +120,7 @@ const MaterialModules = [
   declarations: [HeaderComponent, FooterComponent, MenuComponent],
   imports: [
     NotifierModule.withConfig(customNotifierOptions),
+    NgxSpinnerModule,
     CommonModule,
     BrowserModule,
     HttpClientModule,
@@ -153,6 +155,7 @@ const MaterialModules = [
   ],
   exports: [
     NotifierModule,
+    NgxSpinnerModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,
@@ -200,6 +203,7 @@ const MaterialModules = [
     EntryLoadService,
     DesciplineService,
     AccountService
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SharedModule { }
