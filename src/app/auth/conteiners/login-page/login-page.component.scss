@@ -37,13 +37,12 @@ html {
     }
 }
 
-.authorization {
+.auth {
     &__inner {
         @include flex-center;
         flex-direction: column;
         position: relative;
         margin-top: 100px;
-        text-align: center;
     }
 
     &__title {
@@ -52,6 +51,7 @@ html {
         font-size: 30px;
         color: $color-blue;
         letter-spacing: 2px;
+        text-align: center;
 
         &::after {
             display: block;
@@ -129,6 +129,13 @@ html {
         transition-duration: 0.5s;
         color: $color-blue;
 
+        &:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
         &::placeholder {
             @include segoe-semi;
             color: $color-blue;
@@ -137,6 +144,13 @@ html {
         &:hover,
         &:focus {
             border-color: $color-blue !important;
+        }
+    }
+
+    @-webkit-keyframes autofill {
+        to {
+            color: inherit;
+            background-color: transparent;
         }
     }
 
@@ -180,6 +194,12 @@ html {
         line-height: 14px;
         color: $color-blue;
         cursor: pointer;
+    }
+
+    &__incorrect {
+        display: block;
+        padding-top: 5px;
+        color: red;
     }
 
     &__btn {

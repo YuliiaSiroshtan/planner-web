@@ -5,48 +5,41 @@
     </a>
   </div>
 </header>
-<section class="authorization">
+<section class="auth">
   <div class="wrapper">
-    <div class="authorization__inner">
-      <span class="authorization__title" title="Вхід в персональний кабінет викладача">Вхід в персональний кабінет
+    <div class="auth__inner">
+      <span class="auth__title" title="Вхід в персональний кабінет викладача">Вхід в персональний кабінет
         викладача</span>
 
-      <div class="authorization__background-image"></div>
-      <form class="authorization__form" [formGroup]="userform" (ngSubmit)="onSubmit()">
+      <div class="auth__background-image"></div>
+      <form class="auth__form" [formGroup]="userform" (ngSubmit)="onSubmit()">
 
-        <div class="authorization__container">
-          <div class="authorization__input-content">
-            <label class="authorization__input-image authorization__input-image--login" for="auto-login"></label>
-            <input class="authorization__input" 
-              type="email" placeholder="ЛОГІН" 
-              formControlName="email"
-              id="auto-login">
-              <span *ngIf="user.email.invalid && user.email.errors.required && (user.email.dirty || user.email.touched)">
-                This field is required!
+        <div class="auth__container">
+          <div class="auth__input-content">
+            <label class="auth__input-image auth__input-image--login" for="auto-login"></label>
+            <input class="auth__input" type="email" placeholder="ЛОГІН" formControlName="email" id="auto-login">
+              <span class="auth__incorrect" *ngIf="user.email.invalid && user.email.errors.required && (user.email.dirty || user.email.touched)">
+                Це поле є обов'язковим!
               </span>
-              <span *ngIf="user.email.invalid && user.email.errors.email && (user.email.dirty || user.email.touched)">
-                Email is invalid!
+              <span class="auth__incorrect" *ngIf="user.email.invalid && user.email.errors.email && (user.email.dirty || user.email.touched)">
+                Некоректний Email!
               </span>
           </div>
 
-          <div class="authorization__input-content">
-            <label class="authorization__input-image authorization__input-image--password" for="auto-pass"></label>
-            <input class="authorization__input" 
-              type="password" 
-              placeholder="ПАРОЛЬ"
-              formControlName="password" 
-              id="auto-pass">
-              <span *ngIf="user.password.invalid && user.password.errors.required && (user.password.dirty || user.password.touched)">
-                This field is required!
+          <div class="auth__input-content">
+            <label class="auth__input-image auth__input-image--password" for="auto-pass"></label>
+            <input class="auth__input" type="password" placeholder="ПАРОЛЬ"formControlName="password" id="auto-pass">
+              <span class="auth__incorrect" *ngIf="user.password.invalid && user.password.errors.required && (user.password.dirty || user.password.touched)">
+                Це поле є обов'язковим!
               </span>
           </div>
       
-          <!-- <div class="authorization__form-check">
-            <input class="authorization__check" type="checkbox" id="auto-check" requiredx>
-            <label class="authorization__check-label" for="auto-check">Запам'ятати мене</label>
+          <!-- <div class="auth__form-check">
+            <input class="auth__check" type="checkbox" id="auto-check" requiredx>
+            <label class="auth__check-label" for="auto-check">Запам'ятати мене</label>
           </div> -->
-          <button class="authorization__btn" type="submit">
-            <span class="authorization__btn-title">Вхід</span>
+          <button class="auth__btn" type="submit">
+            <span class="auth__btn-title">Вхід</span>
           </button>
         </div>
       </form>
