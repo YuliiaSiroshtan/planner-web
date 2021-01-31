@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserInfo } from "src/app/shared/models/user-info.model";
 import { UserDataService } from "src/app/core/services/user-data.service";
 import { AuthenticationService } from 'src/app/auth/services/authentication.service';
+import { AccountService } from '../../services/account.service';
 
 @Component({
   selector: 'home-component',
@@ -13,11 +14,14 @@ export class HomeComponent implements OnInit {
   //userInfo:
   isEdit: boolean;
 
-  constructor(private authenticationService: AuthenticationService,
-    private userDataService: UserDataService) { }
+  constructor(private _authenticationService: AuthenticationService,
+    private _userDataService: UserDataService,
+    private _accountService: AccountService) {
+     }
 
   ngOnInit() {
     this.userProfile = new UserInfo();
+    // this._accountService.getUser();
   }
 
 

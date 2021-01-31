@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserInfo } from '../../models/user-info.model';
+import { AccountService } from '../../services/account.service';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -15,14 +16,16 @@ export class HomePageComponent implements OnInit {
   constructor(
     //private authenticationService: AuthenticationService,
     //private userDataService: UserDataService
-    private _userService: UserService
+    private _userService: UserService,
+    private _accountService: AccountService
     ) { }
 
   ngOnInit() {
-    this._userService.getUserInfo().subscribe(data =>{
-      console.log(data);
-      this.userProfile = data[0].data;
-    });
+    this._accountService.getUser();
+    // this._userService.getUserInfo().subscribe(data =>{
+    //   console.log(data);
+    //   this.userProfile = data[0].data;
+    // });
   }
 
 

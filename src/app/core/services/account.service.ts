@@ -57,6 +57,13 @@ export class AccountService {
       .subscribe();
   }
 
+  getUser(){
+    this._http.get(environment.apiPythonBaseUrl + 'profile').pipe(take(1),
+    map((response: any) =>{
+      console.log(response);
+    })).subscribe();
+  }
+
   uploadUser(id: number) {
     this._http
       .get(environment.apiBaseUrl + 'api/Account/GetUser' + id)
