@@ -1,5 +1,5 @@
 export const Roles = {
-    TrainingDivision: 'Навчальний відділ',
-    Teacher: 'Викладач',
-    HeadOfDepartmen: 'Завідувач кафедри'
+    TrainingDivision: 'head_of_department',
+    Teacher: 'teacher',
+    HeadOfDepartmen: 'head_of_study_department'
 }

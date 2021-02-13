@@ -21,6 +21,8 @@ export class HomePageComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    this.userProfile = new UserInfo();
+    console.log('home');
     this._accountService.getUser();
     // this._userService.getUserInfo().subscribe(data =>{
     //   console.log(data);

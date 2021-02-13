@@ -60,7 +60,8 @@ export class AccountService {
   getUser(){
     this._http.get(environment.apiPythonBaseUrl + 'profile').pipe(take(1),
     map((response: any) =>{
-      console.log(response);
+      console.log('response', response);
+      localStorage.setItem('role', response.role);
     })).subscribe();
   }
 
