@@ -1,37 +1,37 @@
 <main class="main">
   <section class="intro">
-    <div class="wrapper">
+    <div class="wrapper" *ngIf="(user$ | async) as user">
       <div class="intro__inner" data-ng-controller="registerController as registerCtrl" ng-cloak
       data-ng-init="registerCtrl.init()">
           <span class="intro__title">Ваш особистий кабінет</span>
           <div class="intro__container">
             <div class="intro__item">
               <div class="intro__suptitle">П. I .Б.</div>
-              <div class="intro__data">{{userProfile.givenName}}</div>
+              <div class="intro__data">{{user.name}}</div>
             </div>
             <div class="intro__item">
               <div class="intro__suptitle">Посада</div>
-              <div class="intro__data">{{userProfile.sn}}</div>
+              <div class="intro__data"></div>
             </div>
             <div class="intro__item">
               <div class="intro__suptitle">Звання</div>
-              <div class="intro__data">{{userProfile.sn}}</div>
+              <div class="intro__data"></div>
             </div>
             <div class="intro__item">
               <div class="intro__suptitle">Ступiнь</div>
-              <div class="intro__data">{{userProfile.sn}}</div>
+              <div class="intro__data"></div>
             </div>
             <div class="intro__item">
               <div class="intro__suptitle">e-mail</div>
-              <div class="intro__data">{{userProfile.mail}}</div>
+              <div class="intro__data">{{user.email}}</div>
             </div>
             <div class="intro__item">
               <div class="intro__suptitle">Google Scholar</div>
-              <div class="intro__data">...</div>
+              <div class="intro__data">{{user.google_scholar}}</div>
             </div>
             <div class="intro__item">
               <div class="intro__suptitle">Orcid Scholar</div>
-              <div class="intro__data">...</div>
+              <div class="intro__data">{{user.orcid_scholar}}</div>
             </div>
             <div class="intro__item">
               <div class="intro__suptitle">Scopus</div>

@@ -13,9 +13,11 @@ export class HomePageComponent implements OnInit {
   //userInfo:
   isEdit: boolean;
 
+  get user$(){
+    return this._accountService.user$;
+  }
+
   constructor(
-    //private authenticationService: AuthenticationService,
-    //private userDataService: UserDataService
     private _userService: UserService,
     private _accountService: AccountService
     ) { }

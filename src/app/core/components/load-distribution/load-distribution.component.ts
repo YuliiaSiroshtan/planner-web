@@ -19,16 +19,16 @@ export class LoadDistributionComponent implements OnInit {
   ) { }
 
 
-  get users$(){
-    return this._accountService.users$;
-  }
+  // get users$(){
+  //   // return this._accountService.users$;
+  // }
 
   get fullTimeDisciplines$() : BehaviorSubject<FullTimeDisciplinesViewModel[]>{
     return  this._desciplinesService.fullTimeDisciplines$;
   }
 
   ngOnInit() {
-    this._accountService.uploadUsersByDepartmentId(11);
+    // this._accountService.uploadUsersByDepartmentId(11);
     this._desciplinesService.uploadFullTimeDiscipline(9);
   }
 

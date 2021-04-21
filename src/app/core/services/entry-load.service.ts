@@ -7,6 +7,8 @@ import {
   EntryLoadsPropertyViewModel,
   UserEntryLoadsPropertyViewModel
 } from '../models/entry-load.models';
+import { TypeNotify } from 'src/app/shared/constants/constants';
+import { NotifierService } from 'angular-notifier';
 
 @Injectable()
 export class EntryLoadService {
@@ -18,7 +20,10 @@ export class EntryLoadService {
     UserEntryLoadsPropertyViewModel[]
   > = new BehaviorSubject<UserEntryLoadsPropertyViewModel[]>([]);
 
-  constructor(private _http: HttpClient) {}
+  constructor(
+    private _http: HttpClient,
+    private _notifierService: NotifierService
+    ) {}
 
   uploadEntryLoadProperties() {
     this._http
@@ -95,16 +100,15 @@ export class EntryLoadService {
       .subscribe();
   }
 
-  uploadFile(file: File, hoursPerRate: number) {
+  uploadFile(file: File) {
     let formData: FormData = new FormData();
     formData.append('file', file);
-    formData.append('hoursPerRate', hoursPerRate.toString());
     this._http
-      .post(environment.apiBaseUrl + 'api/EntryLoad/UploadFile', formData)
+      .post(`${environment.apiPythonBaseUrl}uploader`, formData)
       .pipe(
         take(1),
         tap(()=>{
-          this.uploadEntryLoadProperties();
+          this._notifierService.notify(TypeNotify.SUCCESS, "File was upload!");
         }),
         catchError(err => of(console.log(err)))
       )

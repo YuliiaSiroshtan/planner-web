@@ -1,5 +1,15 @@
 import { DepartmentViewModel } from './disciplines.models';
 
+export class UserModel {
+  email: string;
+  google_scholar: string;
+  name: string;
+  orcid_scholar: string;
+  role: string;
+  science_title: string;
+  title: string;
+}
+
 export class UserViewModel {
   id: string;
   ldapId: string;
