@@ -9,6 +9,7 @@ import {
 } from '../models/entry-load.models';
 import { TypeNotify } from 'src/app/shared/constants/constants';
 import { NotifierService } from 'angular-notifier';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Injectable()
 export class EntryLoadService {
@@ -22,7 +23,8 @@ export class EntryLoadService {
 
   constructor(
     private _http: HttpClient,
-    private _notifierService: NotifierService
+    private _notifierService: NotifierService,
+    private _spinnerService: NgxSpinnerService
     ) {}
 
   uploadEntryLoadProperties() {
@@ -101,17 +103,18 @@ export class EntryLoadService {
   }
 
   uploadFile(file: File) {
+    this._spinnerService.show();
     let formData: FormData = new FormData();
     formData.append('file', file);
     this._http
       .post(`${environment.apiPythonBaseUrl}uploader`, formData)
       .pipe(
         take(1),
-        tap(()=>{
-          this._notifierService.notify(TypeNotify.SUCCESS, "File was upload!");
-        }),
         catchError(err => of(console.log(err)))
       )
-      .subscribe();
+      .subscribe(() =>{
+        this._notifierService.notify(TypeNotify.SUCCESS, "File was upload!");
+        this._spinnerService.hide();
+      });
   }
 }
