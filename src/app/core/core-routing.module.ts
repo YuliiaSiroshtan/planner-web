@@ -13,9 +13,8 @@ import { PlanManagementComponent } from './components/plan-management-component/
 import { PlanMethodicalWorkComponent } from './components/plan-methodical-work-component/plan.methodical.work.component';
 import { PlanScientificWorkComponent } from './components/plan-scientific-work-component/plan.scientific.work.component';
 import { UploadDistributionComponent } from './components/upload-distribution-component/upload-distribution.component';
-import { DistributionComponent } from './components/distribution-component/distribution.component';
 import { TeacherEntryLoadComponent } from './conteiners/teacher-entry-load/teacher-entry-load.component';
-import { LoadDistributionComponent } from './components/load-distribution/load-distribution.component';
+import { LoadDistributionComponent } from './conteiners/load-distribution/load-distribution.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -79,10 +78,6 @@ const routes: Routes = [
     component: UploadDistributionComponent,
     canActivate: [AuthGuard],
   },
-  // {
-  //   path: "distribution",
-  //   canActivate: [AuthGuard]
-  // },
   {
     path: 'entry-load',
     component: TeacherEntryLoadComponent,

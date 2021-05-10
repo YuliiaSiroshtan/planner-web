@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CoreRoutingModule } from './core-routing.module';
-import { UtilsService } from '../shared/services/utils.service';
 import { UserListDataService } from './models/user-list-data.service';
 import { NDRDataService } from './services/ndr-data.service';
 import { PublicationDataService } from './services/publication-data.service';
@@ -73,7 +72,7 @@ import { ListboxModule } from 'primeng/listbox';
 
 import { SharedModule } from '../shared/shared.module';
 import { UserService } from './services/user.service';
-import { LoadDistributionComponent } from './components/load-distribution/load-distribution.component';
+import { LoadDistributionComponent } from './conteiners/load-distribution/load-distribution.component';
 
 @NgModule({
   declarations: [
@@ -138,7 +137,7 @@ import { LoadDistributionComponent } from './components/load-distribution/load-d
     MatTableModule,
     MatMenuModule,
     MatButtonModule,
-    
+
   ],
   exports: [
     SharedModule,
