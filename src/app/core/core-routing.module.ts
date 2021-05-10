@@ -1,5 +1,3 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './conteiners/home-page/home-page.component';
 import { AuthGuard } from './services/auth-guard';
 import { AddUpdateUserComponent } from './components/add-update-user-component/add-update-user.component';
@@ -15,8 +13,11 @@ import { PlanScientificWorkComponent } from './components/plan-scientific-work-c
 import { UploadDistributionComponent } from './components/upload-distribution-component/upload-distribution.component';
 import { TeacherEntryLoadComponent } from './conteiners/teacher-entry-load/teacher-entry-load.component';
 import { LoadDistributionComponent } from './conteiners/load-distribution/load-distribution.component';
+import { Route, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
 
-const routes: Routes = [
+
+const routes: Route[] = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'home',

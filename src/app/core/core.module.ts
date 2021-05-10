@@ -42,34 +42,6 @@ import { DayEntryComponent } from './components/day-entry-component/day-entry.co
 import { HomePageComponent } from './conteiners/home-page/home-page.component';
 import { TeacherEntryLoadComponent } from './conteiners/teacher-entry-load/teacher-entry-load.component';
 
-
-//
-import { MessageService, ConfirmationService } from 'primeng/api';
-import { TabViewModule } from 'primeng/tabview';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { DialogModule } from 'primeng/dialog';
-import { SidebarModule } from 'primeng/sidebar';
-import { FileUploadModule } from 'primeng/fileupload';
-import { InputTextModule } from 'primeng/inputtext';
-import { CalendarModule } from 'primeng/calendar';
-import { CheckboxModule } from 'primeng/checkbox';
-import { DropdownModule } from 'primeng/dropdown';
-import { RadioButtonModule } from 'primeng/radiobutton';
-import { InputSwitchModule } from 'primeng/inputswitch';
-import { InputTextareaModule } from 'primeng/inputtextarea';
-import { InputMaskModule } from 'primeng/inputmask';
-import { ButtonModule } from 'primeng/button';
-import { SplitButtonModule } from 'primeng/splitbutton';
-import { PaginatorModule } from 'primeng/paginator';
-import { TableModule } from 'primeng/table';
-import { MegaMenuModule } from 'primeng/megamenu';
-import { ToastModule } from 'primeng/toast';
-import { MessagesModule } from 'primeng/messages';
-import { MessageModule } from 'primeng/message';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { ListboxModule } from 'primeng/listbox';
-
-
 import { SharedModule } from '../shared/shared.module';
 import { UserService } from './services/user.service';
 import { LoadDistributionComponent } from './conteiners/load-distribution/load-distribution.component';
@@ -108,30 +80,7 @@ import { LoadDistributionComponent } from './conteiners/load-distribution/load-d
     ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
-    InputTextModule,
-    CalendarModule,
-    CheckboxModule,
-    DropdownModule,
-    RadioButtonModule,
-    InputSwitchModule,
-    InputTextareaModule,
-    InputMaskModule,
-    ButtonModule,
-    SplitButtonModule,
-    PaginatorModule,
-    TableModule,
-    TabViewModule,
-    ConfirmDialogModule,
-    DialogModule,
-    SidebarModule,
-    FileUploadModule,
-    MegaMenuModule,
-    ToastModule,
-    MessagesModule,
-    MessageModule,
-    ProgressSpinnerModule,
     MatSidenavModule,
-    ListboxModule,
     MatOptionModule,
     MatSelectModule,
     MatTableModule,
@@ -140,15 +89,12 @@ import { LoadDistributionComponent } from './conteiners/load-distribution/load-d
 
   ],
   exports: [
-    SharedModule,
-    ToastModule
+    SharedModule
   ],
   providers:
     [
-      { provide: MessageService, useClass: MessageService },
       { provide: UserListDataService, useClass: UserListDataService },
       { provide: NDRDataService, useClass: NDRDataService },
-      { provide: ConfirmationService, useClass: ConfirmationService },
       { provide: PublicationDataService, useClass: PublicationDataService },
       { provide: ReportDataService, useClass: ReportDataService },
       { provide: IndivPlanDataService, useClass: IndivPlanDataService },

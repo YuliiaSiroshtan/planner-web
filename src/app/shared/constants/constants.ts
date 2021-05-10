@@ -1,7 +1,5 @@
-import { SelectItem } from 'primeng/api';
-
 export class ApplicationConstants {
-    public static readonly ROLES: SelectItem[] = [
+    public static readonly ROLES: any[] = [
         { label: 'Адміністратор', value: 'Admin' },
         { label: 'Голова методичного відділу', value: 'HeadOfMethodologyDepartment' },
         { label: 'Голова наукового сектора', value: 'HeadOfScientificSector' },
@@ -12,37 +10,37 @@ export class ApplicationConstants {
     ];
 
 
-    public static readonly ACADEMIC_TITLE: SelectItem[] = [
+    public static readonly ACADEMIC_TITLE: any[] = [
         { label: 'Кандидат наук', value: '1' },
         { label: 'Доктор наук', value: '2' },
     ];
 
-    public static readonly DEGREE: SelectItem[] = [
+    public static readonly DEGREE: any[] = [
         { label: 'Доцент', value: '1' },
         { label: 'Старший науковий співробітник', value: '2' },
         { label: 'Професор', value: '3' },
     ];
 
-    public static readonly POSITION: SelectItem[] = [
+    public static readonly POSITION: any[] = [
         { label: 'Завідуючий кафедрою', value: '1' },
         { label: 'Доцент кафедрою', value: '2' },
         { label: 'Старший викладач кафедри', value: '3' },
         { label: 'Викладач кафедри', value: '4' },
         { label: 'Асистент', value: '5' }
     ];
-    public static readonly RESEARCHDONETYPE: SelectItem[] = [
+    public static readonly RESEARCHDONETYPE: any[] = [
         { label: 'Держбюджет', value: '1' },
         { label: 'Госпдоговірна тема', value: '2' },
         { label: 'За індивідуальним планом викладача', value: '3' },
         { label: 'Iншi', value: '4' }
     ];
 
-    public static readonly STORINGTYPE: SelectItem[] = [
+    public static readonly STORINGTYPE: any[] = [
         { label: 'Друковане видання', value: '1' },
         { label: 'Електронне видання', value: '2' }
     ];
 
-    public static readonly PUBLICATION: SelectItem[] = [
+    public static readonly PUBLICATION: any[] = [
         { label: 'Тези доповіді', value: '1' },
         { label: 'Стаття', value: '2' },
         { label: 'Звіт про НДР', value: '3' },

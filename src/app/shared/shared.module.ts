@@ -10,35 +10,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
-
-//
-// import { SharedModule } from 'primeng';
-import { TabViewModule } from 'primeng/tabview';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { DialogModule } from 'primeng/dialog';
-import { SidebarModule } from 'primeng/sidebar';
-import { FileUploadModule } from 'primeng/fileupload';
-import { InputTextModule } from 'primeng/inputtext';
-import { CalendarModule } from 'primeng/calendar';
-import { CheckboxModule } from 'primeng/checkbox';
-import { DropdownModule } from 'primeng/dropdown';
-import { RadioButtonModule } from 'primeng/radiobutton';
-import { InputSwitchModule } from 'primeng/inputswitch';
-import { InputTextareaModule } from 'primeng/inputtextarea';
-import { InputMaskModule } from 'primeng/inputmask';
-import { ButtonModule } from 'primeng/button';
-import { SplitButtonModule } from 'primeng/splitbutton';
-import { PaginatorModule } from 'primeng/paginator';
-import { TableModule } from 'primeng/table';
-import { MegaMenuModule } from 'primeng/megamenu';
-import { ToastModule } from 'primeng/toast';
-import { MessagesModule } from 'primeng/messages';
-import { MessageModule } from 'primeng/message';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { ListboxModule } from 'primeng/listbox';
-
-import { MessageService, ConfirmationService } from 'primeng/api';
-
 // import { MatOptionModule } from '@angular/material';
 import { MatInputModule } from '@angular/material/input';
 // import { MatRippleModule } from '@angular/material';
@@ -127,31 +98,7 @@ const MaterialModules = [
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModules,
-
-    InputTextModule,
-    CalendarModule,
-    CheckboxModule,
-    DropdownModule,
-    RadioButtonModule,
-    InputSwitchModule,
-    InputTextareaModule,
-    InputMaskModule,
-    ButtonModule,
-    SplitButtonModule,
-    PaginatorModule,
-    TableModule,
-    // TabViewModule,
-    ConfirmDialogModule,
-    DialogModule,
-    SidebarModule,
-    FileUploadModule,
-    MegaMenuModule,
-    // ToastModule,
-    MessagesModule,
-    MessageModule,
-    ProgressSpinnerModule,
-    ListboxModule,
+    MaterialModules
   ],
   exports: [
     NotifierModule,
@@ -164,38 +111,12 @@ const MaterialModules = [
     HeaderComponent,
     FooterComponent, 
     MenuComponent,
-    MaterialModules,
-
-    InputTextModule,
-    CalendarModule,
-    CheckboxModule,
-    DropdownModule,
-    RadioButtonModule,
-    InputSwitchModule,
-    InputTextareaModule,
-    InputMaskModule,
-    ButtonModule,
-    SplitButtonModule,
-    PaginatorModule,
-    TableModule,
-    // TabViewModule,
-    ConfirmDialogModule,
-    DialogModule,
-    SidebarModule,
-    FileUploadModule,
-    MegaMenuModule,
-    // ToastModule,
-    MessagesModule,
-    MessageModule,
-    ProgressSpinnerModule,
-    ListboxModule,
+    MaterialModules
   ],
   providers: [
     UtilsService,
-    { provide: MessageService, useClass: MessageService },
     { provide: UserListDataService, useClass: UserListDataService },
     { provide: NDRDataService, useClass: NDRDataService },
-    { provide: ConfirmationService, useClass: ConfirmationService },
     { provide: PublicationDataService, useClass: PublicationDataService },
     { provide: ReportDataService, useClass: ReportDataService },
     { provide: IndivPlanDataService, useClass: IndivPlanDataService },
