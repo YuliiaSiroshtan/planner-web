@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { take, map, catchError } from 'rxjs/operators';
-import { BehaviorSubject, of } from 'rxjs';
-import { UserModel } from '../models/user.models';
+import { take, map } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class AccountService {
-  user$: BehaviorSubject<UserModel> = new BehaviorSubject<UserModel>(
+  user$: BehaviorSubject<any> = new BehaviorSubject<any>(
     null
   );
 
@@ -15,7 +14,7 @@ export class AccountService {
 
   getUser(){
     this._http.get(environment.apiPythonBaseUrl + 'profile').pipe(take(1),
-    map((response: UserModel) =>{
+    map((response: any) =>{
       this.user$.next(response);
       localStorage.setItem('role', response.role);
     })).subscribe();

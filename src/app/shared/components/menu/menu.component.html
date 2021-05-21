@@ -3,39 +3,17 @@
     <li class="menu__item">
       <a class="menu__link" routerLink="/home">Головна</a>
     </li>
-    <li *ngIf="isTeacher || isTrainingDivision" class="menu__item">
-      <a class="menu__link" routerLink="publication">Публікації</a>
-    </li>
     <li class="menu__item" *ngIf="isTeacher || isHeadOfDepartmen">
       <a class="menu__link">Індивідуальний план</a>
     </li>
     <li class="menu__item" *ngIf="isTeacher || isTrainingDivision">
-      <a class="menu__link" routerLink="dashboard">Розклад занять</a>
+      <a class="menu__link" routerLink="">Розклад занять</a>
     </li>
     <li class="menu__item" *ngIf="isTeacher || isTrainingDivision">
       <a class="menu__link">Керівні документи</a>
     </li>
-
-    <li class="menu__item" *ngIf="isTrainingDivision">
-      <a class="menu__link">Результати НДР</a> -->
-      <ul class="submenu">
-        <li>
-          <a >Файл навантаження</a>
-        </li>
-        <li>
-          <a >По кафедрі</a>
-        </li>
-        <li>
-          <a routerLink="load-distribution">Розподіл</a>
-        </li>
-      </ul>
-    </li>
-    <li class="menu__item" *ngIf="isTrainingDivision">
-      <a class="menu__link" >План науки</a>
-    </li>
     <li class="menu__item" *ngIf="isHeadOfDepartmen">
       <a class="menu__link down" routerLink="upload-distribution">Файл навантаження</a>
-
     </li>
     <li class="menu__item">
       <a class="menu__link" (click)="logout()">Вихід</a>

@@ -7,24 +7,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
-
-// import { MatOptionModule } from '@angular/material';
 import { MatInputModule } from '@angular/material/input';
-// import { MatRippleModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { UtilsService } from './services/utils.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { MatOptionModule, MatRippleModule } from '@angular/material/core';
-import { UserListDataService } from '../core/models/user-list-data.service';
-import { NDRDataService } from '../core/services/ndr-data.service';
-import { PublicationDataService } from '../core/services/publication-data.service';
-import { ReportDataService } from '../core/services/report-data.service';
-import { IndivPlanDataService } from '../core/services/indiv-plan-data.service';
-import { DistributionDataService } from '../core/services/distribution-data.service';
 import { EntryLoadService } from '../core/services/entry-load.service';
-import { DesciplineService } from '../core/services/descipline.service';
 import { AccountService } from '../core/services/account.service';
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -111,14 +101,7 @@ const MaterialModules = [
   ],
   providers: [
     UtilsService,
-    { provide: UserListDataService, useClass: UserListDataService },
-    { provide: NDRDataService, useClass: NDRDataService },
-    { provide: PublicationDataService, useClass: PublicationDataService },
-    { provide: ReportDataService, useClass: ReportDataService },
-    { provide: IndivPlanDataService, useClass: IndivPlanDataService },
-    { provide: DistributionDataService, useClass: DistributionDataService },
     EntryLoadService,
-    DesciplineService,
     AccountService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
