@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from "@angular/forms";
-import { MessageService } from "primeng/api";
 import { IndivPlanDataService } from "src/app/core/services/indiv-plan-data.service";
 import { IndivPlanFieldModel, IndivPlanFieldsValueModel } from '../../models/ind-plan.models';
 
@@ -17,7 +16,7 @@ export class PlanMethodicalWorkComponent implements OnInit {
 
   constructor(
     private indivPlanDataService: IndivPlanDataService,
-    private messageService: MessageService) {
+    ) {
   }
 
   ngOnInit() {
@@ -52,9 +51,7 @@ export class PlanMethodicalWorkComponent implements OnInit {
       if (data) {
         this.planMethodicalWorkForm.reset();
         this.getIndivPlanFieldValue();
-        this.messageService.add({ key: 'success', severity: 'success', summary: '', detail: 'Дані організаційної роботи успішно оновлено' });
       } else {
-        this.messageService.add({ key: 'error', severity: 'error', summary: '', detail: '' });
       }
     });
   }

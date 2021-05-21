@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from "@angular/forms";
-import { MessageService } from "primeng/api";
 import { IndivPlanDataService } from "src/app/core/services/indiv-plan-data.service";
 import { TrainingJobModel } from '../../models/ind-plan.models';
 
@@ -16,7 +15,7 @@ export class TrainingJobComponent implements OnInit {
 
   constructor(
     private indivPlanDataService: IndivPlanDataService,
-    private messageService: MessageService) {
+    ) {
   }
 
   ngOnInit() {
@@ -40,9 +39,7 @@ export class TrainingJobComponent implements OnInit {
       if (data) {
         this.trainingJobForm.reset();
         this.getTrainingJob();
-        this.messageService.add({ key: 'success', severity: 'success', summary: '', detail: 'Дані навчальної роботи успішно оновлено' });
       } else {
-        this.messageService.add({ key: 'error', severity: 'error', summary: '', detail: '' });
       }
     });
   }

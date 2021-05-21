@@ -11,8 +11,6 @@ import { ApplicationConstants } from 'src/app/shared/constants/constants';
 import { HttpEventType } from '@angular/common/http';
 import { PublicationAddEditModel } from '../../models/models-publication-component/publication-add-edit.model';
 import { NmbdModel } from '../../models/models-publication-component/nmdb.model';
-import { SelectItem } from 'primeng/api';
-import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'add-edit-publication',
@@ -21,11 +19,9 @@ import { MessageService } from 'primeng/api';
 })
 export class AddEditPublicationComponent implements OnInit {
   @Input() publication: PublicationAddEditModel;
-  users: SelectItem[] = [];
   researchDoneTypes = ApplicationConstants.RESEARCHDONETYPE;
   storingTypes = ApplicationConstants.STORINGTYPE;
   publicationTypes = ApplicationConstants.PUBLICATION;
-  nmbds: SelectItem[] = [];
   // users: SelectItem[]=[];
   collaboratorsNames: string;
 
@@ -42,7 +38,6 @@ export class AddEditPublicationComponent implements OnInit {
 
   constructor(
     private publicationDataService: PublicationDataService,
-    private messageService: MessageService,
     private fb: FormBuilder
   ) {}
 
@@ -138,13 +133,7 @@ export class AddEditPublicationComponent implements OnInit {
       (s) => {
         if (s) {
           let tempNames = [];
-          this.users.forEach((result) => {
-            s.forEach((item) => {
-              if (result.value == item) {
-                tempNames.push(result.label);
-              }
-            });
-          });
+         
           this.collaboratorsNames = tempNames.join(',');
           console.log(this.collaboratorsNames);
         }
@@ -164,33 +153,20 @@ export class AddEditPublicationComponent implements OnInit {
       this.configUsers(data);
 
       if (this.publicationForm.controls.collaboratorsIds.value) {
-        let tempNames = [];
-        this.users.forEach((result) => {
-          this.publicationForm.controls.collaboratorsIds.value.forEach(
-            (item) => {
-              if (result.value == item) {
-                tempNames.push(result.label);
-              }
-            }
-          );
-        });
-        this.collaboratorsNames = tempNames.join(',');
+      
       }
     });
   }
 
   configNmdbs(data: NmbdModel[]) {
     data.forEach((item) => {
-      this.nmbds.push({ label: item.name, value: item.nmbdId });
     });
   }
 
   configUsers(data) {
     console.log(data);
     data.forEach((item) => {
-      this.users.push({ label: item.fullName, value: item.applicationUserId });
     });
-    console.log(this.users);
   }
 
   addPublication() {
@@ -206,19 +182,9 @@ export class AddEditPublicationComponent implements OnInit {
       .subscribe((data) => {
         if (data) {
           this.publicationForm.reset();
-          this.messageService.add({
-            key: 'success',
-            severity: 'error',
-            summary: '',
-            detail: 'Публікацію успішно додано',
-          });
+        
         } else {
-          this.messageService.add({
-            key: 'error',
-            severity: 'error',
-            summary: '',
-            detail: '',
-          });
+          
         }
       });
   }

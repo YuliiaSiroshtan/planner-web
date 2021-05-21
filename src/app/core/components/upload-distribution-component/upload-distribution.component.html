@@ -1,12 +1,14 @@
 <span class="files">Оберіть файл, що містить вхідне навантаження кафедри</span>
 <div class="download-file">
-  <p-fileUpload
+  <!-- <p-fileUpload
     name="filePath"
     class="file"
     customUpload="true"
     (uploadHandler)="uploadFile($event)"
     placeholder="Завантажити файл навантаження"
-  ></p-fileUpload>
+  ></p-fileUpload> -->
+
+  <input type="file" class="file-upload" (click)="uploadFile($event)">
 </div>
 
 <!-- <table

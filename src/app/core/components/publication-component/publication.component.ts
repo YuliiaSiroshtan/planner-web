@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from "@angular/forms";
 import { Input } from "@angular/core";
 import { PublicationDataService } from "src/app/core/services/publication-data.service";
-import { SelectItem } from "primeng/components/common/selectitem";
 import { Publication } from '../../models/models-publication-component/publication.model';
 
 @Component({
@@ -14,7 +13,7 @@ export class PublicationComponent implements OnInit {
   @Input() PublicationInfo: Publication;
 
   Publication: Publication[] = [];
-  users: SelectItem[] = []
+  users: any[] = []
   publicationForm: FormGroup;
 
   constructor(

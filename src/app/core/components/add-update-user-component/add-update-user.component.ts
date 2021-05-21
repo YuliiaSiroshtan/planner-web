@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { MessageService } from "primeng/components/common/messageservice";
 import { Input } from "@angular/core";
 import { UserDataService } from "src/app/core/services/user-data.service";
 import { ValidateLetter } from "src/app/shared/validators/letter-validator";
@@ -35,7 +34,6 @@ export class AddUpdateUserComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService,
     private userDataService: UserDataService,
     private router: Router,
-    private messageService: MessageService,
     private fb: FormBuilder) {
 
 
@@ -136,13 +134,10 @@ export class AddUpdateUserComponent implements OnInit {
       if (data) {
         this.userform.reset();
         if (this.applicationUserId) {
-          this.messageService.add({ key: 'success', severity: 'success', summary: '', detail: 'Користувача успішно відредаговано' });
         } else {
-          this.messageService.add({ key: 'success', severity: 'success', summary: '', detail: 'Новий користувач успішно створенний' });
         }
 
       } else {
-        this.messageService.add({ key: 'error', severity: 'error', summary: '', detail: '' });
       }
     });
     //this.back.emit(null);

@@ -15,10 +15,9 @@ import { AppRoutingModule } from '../app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MatSelectModule} from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatOptionModule, MatRippleModule } from '@angular/material/core';
-import { MatSelectModule } from '@angular/material/select';
-import { MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -82,11 +81,9 @@ import { LoadDistributionComponent } from './conteiners/load-distribution/load-d
     BrowserAnimationsModule,
     MatSidenavModule,
     MatOptionModule,
-    MatSelectModule,
-    MatTableModule,
     MatMenuModule,
     MatButtonModule,
-
+    MatSelectModule
   ],
   exports: [
     SharedModule

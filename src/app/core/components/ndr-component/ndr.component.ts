@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms"
 import { ValidateLetter } from "src/app/shared/validators/letter-validator";
 import { NDRDataService } from "src/app/core/services/ndr-data.service";
 import { NDR } from "src/app/core/models/ndr.model";
-import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'ndr',
@@ -19,7 +18,6 @@ export class NDRComponent implements OnInit {
 
   constructor(
     private _NDRDataService: NDRDataService,
-    private _messageService: MessageService,
     private _fb: FormBuilder) {
   }
 
@@ -83,9 +81,7 @@ export class NDRComponent implements OnInit {
       if (data) {
         this.NDRForm.reset();
         this.getUserNdr();
-        this._messageService.add({ key: 'success', severity: 'success', summary: '', detail: 'НДР студента успішно додано' });
       } else {
-        this._messageService.add({ key: 'error', severity: 'error', summary: '', detail: '' });
       }
     });
   }

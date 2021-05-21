@@ -1,8 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { DistributionFilterModel, DayEntryModel } from "../../models/distributions.models";
 import { DistributionDataService } from "../../services/distribution-data.service";
-import { SelectItem } from "primeng/components/common/selectitem";
-
 
 @Component({
   selector: 'distribution',
@@ -12,8 +10,8 @@ import { SelectItem } from "primeng/components/common/selectitem";
 export class DistributionComponent implements OnInit {
   index: number;
   filter: DistributionFilterModel;
-  years: SelectItem[] = [{ label: '2017', value: '2017' }];
-  semesters: SelectItem[] = [{ label: 'Перший семестр', value: '1' }, { label: 'Другий семестр', value: '1' }];
+  years: any[] = [{ label: '2017', value: '2017' }];
+  semesters: any[] = [{ label: 'Перший семестр', value: '1' }, { label: 'Другий семестр', value: '1' }];
   dayEntry: DayEntryModel[] = [];
 
   constructor(private distributionDataService: DistributionDataService) {

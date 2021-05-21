@@ -4,8 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
-import { MatSelectModule } from '@angular/material/select';
-import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -77,8 +75,6 @@ const customNotifierOptions: NotifierOptions = {
 
 const MaterialModules = [
   MatSidenavModule,
-  MatSelectModule,
-  MatTableModule,
   MatMenuModule,
   MatButtonModule,
   MatInputModule,
