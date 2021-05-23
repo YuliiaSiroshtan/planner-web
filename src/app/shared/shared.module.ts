@@ -18,22 +18,23 @@ import { EntryLoadService } from '../core/services/entry-load.service';
 import { AccountService } from '../core/services/account.service';
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { MatTableModule } from '@angular/material/table';
 
 /**
  * Custom angular notifier options
  */
 const customNotifierOptions: NotifierOptions = {
   position: {
-		horizontal: {
-			position: 'middle',
-			distance: 12
-		},
-		vertical: {
-			position: 'top',
-			distance: 12,
-			gap: 10
-		}
-	},
+    horizontal: {
+      position: 'middle',
+      distance: 12
+    },
+    vertical: {
+      position: 'top',
+      distance: 12,
+      gap: 10
+    }
+  },
   theme: 'material',
   behaviour: {
     autoHide: 5000,
@@ -71,6 +72,7 @@ const MaterialModules = [
   MatFormFieldModule,
   MatOptionModule,
   MatRippleModule,
+  MatTableModule
 ];
 
 @NgModule({
@@ -95,7 +97,7 @@ const MaterialModules = [
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HeaderComponent,
-    FooterComponent, 
+    FooterComponent,
     MenuComponent,
     MaterialModules
   ],

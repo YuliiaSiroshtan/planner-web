@@ -1,9 +1,9 @@
 import { HomePageComponent } from './conteiners/home-page/home-page.component';
 import { AuthGuard } from './services/auth-guard';
 import { UploadDistributionComponent } from './components/upload-distribution-component/upload-distribution.component';
-import { LoadDistributionComponent } from './conteiners/load-distribution/load-distribution.component';
 import { Route, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { LoadPageComponent } from './conteiners/load-page/load-page.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,8 +18,8 @@ const routes: Route[] = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'load-distribution',
-    component: LoadDistributionComponent,
+    path:'load',
+    component: LoadPageComponent,
     canActivate: [AuthGuard]
   }
 ];

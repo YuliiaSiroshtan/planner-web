@@ -1,5 +1,36 @@
-<span class="files">Оберіть файл, що містить вхідне навантаження кафедри</span>
-<div class="download-file">
-  <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
-  <input hidden (change)="uploadFile($event)" #fileInput type="file" id="file">
-</div>
+<main class="main">
+  <section class="intro">
+    <div class="wrapper">
+      <div class="intro__inner">
+        <span class="intro__title">Оберіть файл, що містить вхідне навантаження кафедри</span>
+        <div class="intro__container">
+          <div class="download-file">
+            <button type="button" mat-raised-button (click)="fileInput.click()">Виберіть файл</button>
+            <input hidden (change)="uploadFile($event)" #fileInput type="file" id="file">
+          </div>
+        </div>
+        <div class="intro__container">
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Ім`я файлу </th>
+              <td mat-cell *matCellDef="let element"><a class="link" (click)="downloadFile()"> {{element.name}} </a> </td>
+            </ng-container>
+
+            <ng-container matColumnDef="upload_date">
+              <th mat-header-cell *matHeaderCellDef> Дата завантаження </th>
+              <td mat-cell *matCellDef="let element"> {{element.upload_date | date:'d/MM/yyyy'}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="active">
+              <th mat-header-cell *matHeaderCellDef></th>
+              <td mat-cell *matCellDef="let element">{{element.active}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

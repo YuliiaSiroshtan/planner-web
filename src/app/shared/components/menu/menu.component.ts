@@ -8,25 +8,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent {
-  
-  get isHeadOfDepartmen(){
+
+  get isHeadOfDepartmen() {
     return this._utilsService.isHeadOfDepartmen;
   }
 
-  get isTeacher(){
+  get isTeacher() {
     return this._utilsService.isTeacher;
   }
 
-  get isTrainingDivision(){
+  get isTrainingDivision() {
     return this._utilsService.isTrainingDivision;
   }
 
   constructor(
     private _utilsService: UtilsService,
     private _router: Router
-    ) { }
+  ) { }
 
-  logout(){
+  redirectTo(url: string) {
+    this._router.navigate([url]);
+  }
+
+  logout() {
     localStorage.clear();
     this._router.navigate(['/login']);
   }

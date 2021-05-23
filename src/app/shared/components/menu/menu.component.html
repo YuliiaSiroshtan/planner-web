@@ -1,7 +1,7 @@
 <nav class="menu">
   <ul class="menu__list">
     <li class="menu__item">
-      <a class="menu__link" routerLink="/home">Головна</a>
+      <a class="menu__link" (click)="redirectTo('home')">Головна</a>
     </li>
     <li class="menu__item" *ngIf="isTeacher || isHeadOfDepartmen">
       <a class="menu__link">Індивідуальний план</a>
@@ -12,8 +12,11 @@
     <li class="menu__item" *ngIf="isTeacher || isTrainingDivision">
       <a class="menu__link">Керівні документи</a>
     </li>
+    <li class="menu__item" *ngIf="isTeacher || isTrainingDivision">
+      <a class="menu__link" (click)="redirectTo('load')">Розподілення навантаження</a>
+    </li>
     <li class="menu__item" *ngIf="isHeadOfDepartmen">
-      <a class="menu__link down" routerLink="upload-distribution">Файл навантаження</a>
+      <a class="menu__link down" (click)="redirectTo('upload-distribution')" routerLinkActive="active">Файл навантаження</a>
     </li>
     <li class="menu__item">
       <a class="menu__link" (click)="logout()">Вихід</a>

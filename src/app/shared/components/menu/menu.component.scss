@@ -38,6 +38,7 @@ html {
   }
 
   &__link {
+    cursor: pointer;
     @include segoe-semi;
     font-size: 20px;
     color: #fff;

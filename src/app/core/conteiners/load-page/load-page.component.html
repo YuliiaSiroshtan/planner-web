@@ -1,0 +1,64 @@
+<section class="intro">
+    <div class="intro__inner">
+        <span class="intro__title">Розподілення навантаження</span>
+        <div class="intro__container">
+            <div class="form">
+                <div class="group">
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Викладач</mat-label>
+                            <mat-select [(ngModel)]="selectedTeacher">
+                                <mat-option *ngFor="let teacher of teachers" [value]="teacher">
+                                    {{teacher}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Ставка</mat-label>
+                            <input matInput [value]="stavkaHour">
+                        </mat-form-field>
+                    </div>
+
+                    <mat-form-field>
+                        <mat-label>Дісципліна</mat-label>
+                        <mat-select [(ngModel)]="selectedLesson" (ngModelChange)="changedLesson($event)" >
+                            <mat-option *ngFor="let lesson of lessons" [value]="lesson">
+                                {{lesson}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Группа</mat-label>
+                        <mat-select [(ngModel)]="selectedGroup">
+                            <mat-option *ngFor="let group of groups" [value]="group">
+                                {{group}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="group">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Лабораторні години</mat-label>
+                        <input matInput [(ngModel)]="labHours">
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Практичні години</mat-label>
+                        <input matInput [(ngModel)]="practiceHours">
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Лекційні години</mat-label>
+                        <input matInput [(ngModel)]="labHours">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <button (click)="save()" mat-raised-button color="primary">Зберегти</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

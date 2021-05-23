@@ -32,9 +32,7 @@ export class LoginPageComponent {
 
   onSubmit(){
     if (this.userform.invalid) {
-      console.log(this.userform);
       this.userform.markAsTouched();
-      console.log(this.userform);
       return;
     }
 

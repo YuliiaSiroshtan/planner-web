@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatOptionModule, MatRippleModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
@@ -17,13 +17,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { UploadDistributionComponent } from './components/upload-distribution-component/upload-distribution.component';
 import { HomePageComponent } from './conteiners/home-page/home-page.component';
 import { SharedModule } from '../shared/shared.module';
-import { LoadDistributionComponent } from './conteiners/load-distribution/load-distribution.component';
+import { LoadPageComponent } from './conteiners/load-page/load-page.component';
+import { LoadTeacherPageComponent } from './conteiners/load-teacher-page/load-teacher-page.component';
 
 @NgModule({
   declarations: [
     UploadDistributionComponent,
     HomePageComponent,
-    LoadDistributionComponent
+    LoadPageComponent,
+    LoadTeacherPageComponent
   ],
   imports: [
     CoreRoutingModule,
