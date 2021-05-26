@@ -24,18 +24,13 @@ export class EntryLoadService {
     ) {}
 
   uploadFile(file: File) {
-    this._spinnerService.show();
     let formData: FormData = new FormData();
     formData.append('file', file);
-    this._http
+    return this._http
       .post(`${environment.apiPythonBaseUrl}uploader`, formData)
       .pipe(
         take(1),
         catchError(err => of(console.log(err)))
-      )
-      .subscribe(() =>{
-        this._notifierService.notify(TypeNotify.SUCCESS, "File was upload!");
-        this._spinnerService.hide();
-      });
+      );
   }
 }
