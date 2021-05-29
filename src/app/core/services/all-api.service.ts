@@ -32,14 +32,28 @@ export class AllApiService {
 
 
   saveLoadHours(teacher: string, lesson: string, lessonType: number, group: string, hours: number) {
-    return this._http.post(`${environment.apiPythonBaseUrl}savepoint`, 
+    return this._http.post(`${environment.apiPythonBaseUrl}savepoint`,
       {
-          teacher: teacher,
-          lesson: lesson,
-          type_lesson: lessonType,
-          group: group,
-          hours: hours
+        teacher: teacher,
+        lesson: lesson,
+        type_lesson: lessonType,
+        group: group,
+        hours: hours
       }
-      ).pipe(take(1));
+    ).pipe(take(1));
+  }
+
+  getHoursTeachers(teacher: string) {
+    return this._http.post(`${environment.apiPythonBaseUrl}hours-teacher`, {
+      teacher: teacher
+    }).pipe(take(1));
+  }
+
+  saveRate(teacher: string, hours: number, gid: string) {
+    return this._http.post(`${environment.apiPythonBaseUrl}rate`, {
+      teacher: teacher,
+      hours: hours,
+      gid: gid
+    }).pipe(take(1));
   }
 }

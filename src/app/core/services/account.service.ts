@@ -17,6 +17,7 @@ export class AccountService {
     map((response: any) =>{
       this.user$.next(response);
       localStorage.setItem('role', response.role);
+      localStorage.setItem('gid', response.science_title);
     })).subscribe();
   }
 }

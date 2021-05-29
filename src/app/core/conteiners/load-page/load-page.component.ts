@@ -12,6 +12,7 @@ import { AllApiService } from '../../services/all-api.service';
 })
 export class LoadPageComponent implements OnInit {
   stavkaHour = 480;
+  rate = 0;
   teachers = [];
   groups = [];
   lessons = [];
@@ -30,7 +31,7 @@ export class LoadPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTeachers();
-    this.getHours();
+    // this.getHours();
   }
 
   getTeachers() {
@@ -52,9 +53,19 @@ export class LoadPageComponent implements OnInit {
     });
   }
 
+  changeTeacher(event: any){
+    this._allApiSerice.getHoursTeachers(this.selectedTeacher).subscribe((res) =>{
+      console.log(res);
+    });
+  }
+
   changedLesson(event: any) {
     if (!this.selectedLesson) return;
     this.getStudents();
+  }
+
+  saveRate(){
+    this._allApiSerice.saveRate(this.selectedTeacher, this.rate, localStorage.getItem('gid')).subscribe();
   }
 
   save() {

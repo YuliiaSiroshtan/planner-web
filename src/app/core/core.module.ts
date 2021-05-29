@@ -19,13 +19,15 @@ import { HomePageComponent } from './conteiners/home-page/home-page.component';
 import { SharedModule } from '../shared/shared.module';
 import { LoadPageComponent } from './conteiners/load-page/load-page.component';
 import { LoadTeacherPageComponent } from './conteiners/load-teacher-page/load-teacher-page.component';
+import { DocumentPageComponent } from './conteiners/document-page/document-page.component';
 
 @NgModule({
   declarations: [
     UploadDistributionComponent,
     HomePageComponent,
     LoadPageComponent,
-    LoadTeacherPageComponent
+    LoadTeacherPageComponent,
+    DocumentPageComponent
   ],
   imports: [
     CoreRoutingModule,

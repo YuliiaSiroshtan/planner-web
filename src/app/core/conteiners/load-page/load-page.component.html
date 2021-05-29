@@ -7,7 +7,7 @@
                     <div>
                         <mat-form-field>
                             <mat-label>Викладач</mat-label>
-                            <mat-select [(ngModel)]="selectedTeacher">
+                            <mat-select [(ngModel)]="selectedTeacher" (ngModelChange)="changeTeacher($event)">
                                 <mat-option *ngFor="let teacher of teachers" [value]="teacher">
                                     {{teacher}}
                                 </mat-option>
@@ -16,7 +16,7 @@
 
                         <mat-form-field>
                             <mat-label>Ставка</mat-label>
-                            <input matInput [value]="stavkaHour">
+                            <input (blur)="saveRate()" matInput [value]="stavkaHour">
                         </mat-form-field>
                     </div>
 

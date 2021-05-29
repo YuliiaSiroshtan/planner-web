@@ -4,6 +4,7 @@ import { UploadDistributionComponent } from './components/upload-distribution-co
 import { Route, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { LoadPageComponent } from './conteiners/load-page/load-page.component';
+import { DocumentPageComponent } from './conteiners/document-page/document-page.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,8 +19,13 @@ const routes: Route[] = [
     canActivate: [AuthGuard],
   },
   {
-    path:'load',
+    path: 'load',
     component: LoadPageComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'document',
+    component: DocumentPageComponent,
     canActivate: [AuthGuard]
   }
 ];
@@ -28,4 +34,4 @@ const routes: Route[] = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class CoreRoutingModule {}
+export class CoreRoutingModule { }

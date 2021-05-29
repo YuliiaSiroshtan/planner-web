@@ -1,0 +1,83 @@
+@import "../../../../styles/mixin.scss";
+$blue-background: #141880;
+
+.form {
+    margin: 20px;
+    display: flex;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.intro {
+    &__inner {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 62px 0 146px;
+        width: 80%;
+        margin: auto;
+
+        @include r(576) {
+            padding: 45px 0;
+        }
+    }
+
+    &__title {
+        @include segoe-bold;
+        text-align: center;
+        font-size: 30px;
+        color: #2c2b2b;
+
+        @include r(480) {
+            font-size: 24px;
+        }
+    }
+
+    &__end {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin: auto;
+    }
+
+    &__body {
+        text-align: justify;
+        font-size: 14px;
+        color: #2c2b2b;
+
+        @include r(480) {
+            font-size: 24px;
+        }
+    }
+
+    &__container {
+        margin-top: 50px;
+        width: 60%;
+        border-left: 15px solid $blue-background;
+
+        @include r(992) {
+            width: 100%;
+        }
+
+        @include r(768) {
+            padding-left: 20px;
+        }
+
+        @include r(576) {
+            margin-top: 30px;
+            border-left: none;
+            padding-left: 0;
+        }
+    }
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+    border: 1px solid black;
+}

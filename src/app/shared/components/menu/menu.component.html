@@ -10,7 +10,7 @@
       <a class="menu__link" routerLink="">Розклад занять</a>
     </li>
     <li class="menu__item" *ngIf="isTeacher || isTrainingDivision">
-      <a class="menu__link">Керівні документи</a>
+      <a class="menu__link" (click)="redirectTo('document')">Керівні документи</a>
     </li>
     <li class="menu__item" *ngIf="isTeacher || isTrainingDivision">
       <a class="menu__link" (click)="redirectTo('load')">Розподілення навантаження</a>
